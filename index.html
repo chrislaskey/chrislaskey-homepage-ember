@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>Modified Ember Starter Kit</title>
-  <link rel="stylesheet" href="static/css/main.css">
+	<meta charset="utf-8">
+	<title>Modified Ember Starter Kit</title>
+	<link rel="stylesheet" href="static/css/main.css">
 </head>
 <body>
 
@@ -15,6 +15,16 @@
 
   <script type="text/x-handlebars" data-template-name="index">
     <ul>
+	{{#linkTo work }}Work{{/linkTo}}
+    {{#each item in model}}
+      <li>{{item}}</li>
+    {{/each}}
+    </ul>
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="work">
+    <ul>
+	{{#linkTo index }}Home{{/linkTo}}
     {{#each item in model}}
       <li>{{item}}</li>
     {{/each}}
