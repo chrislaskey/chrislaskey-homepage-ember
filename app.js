@@ -29,7 +29,7 @@ App.WorkRoute = Ember.Route.extend({
 });
 
 App.BlogRoute = Ember.Route.extend({
-	model: function(params){
+	model: function(){
 		return ['this', 'is', 'blog'];
 	}
 });
