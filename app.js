@@ -8,6 +8,7 @@ App.Router.map(function() {
 	this.route('technicalskills', {path: "/technical-skills"});
 	this.route('work', {path: "/work"});
 	this.route('blog', {path: "/blog"});
+	this.route('post', {path: "/blog/:post_id"});
 });
 
 App.IndexRoute = Ember.Route.extend({
@@ -31,5 +32,14 @@ App.WorkRoute = Ember.Route.extend({
 App.BlogRoute = Ember.Route.extend({
 	model: function(){
 		return ['this', 'is', 'blog'];
+	}
+});
+
+App.PostRoute = Ember.Route.extend({
+	model: function(params) {
+		return [params.post_id];
+	},
+	serialize: function(post) {
+		return { post_id: post.get('id') };
 	}
 });
