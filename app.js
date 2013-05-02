@@ -1,8 +1,8 @@
 App = Ember.Application.create();
 
-App.Router.reopen({
-	location: 'history'
-});
+// App.Router.reopen({
+// 	location: 'history'
+// });
 
 App.Router.map(function() {
 	this.route('technicalskills', {path: "/technical-skills"});
