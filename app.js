@@ -35,9 +35,15 @@ App.BlogRoute = Ember.Route.extend({
 	}
 });
 
+App.Post = Ember.Object.extend({});
+
 App.PostRoute = Ember.Route.extend({
 	model: function(params) {
-		return [params.post_id];
+		posts = App.Post.create({
+			'one': ['text for post one'],
+			'two': ['text for post two'],
+		});
+		return posts.get(params.post_id);
 	},
 	serialize: function(post) {
 		return { post_id: post.get('id') };
