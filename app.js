@@ -42,13 +42,15 @@
 	App.PostRoute = Ember.Route.extend({
 		model: function(params) {
 			var posts,
+				post,
 				md = marked("**bold**");
 			posts = App.Post.create({
 				'one': ['text for post one'],
 				'two': ['text for post two'],
 				'markdown': [md],
 			});
-			return posts.get(params.post_id);
+			post = posts.get(params.post_id);
+			return post;
 		},
 		serialize: function(post) {
 			return { post_id: post.get('id') };
