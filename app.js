@@ -1,51 +1,55 @@
-App = Ember.Application.create();
+(function(){
 
-// App.Router.reopen({
-// 	location: 'history'
-// });
+	App = Ember.Application.create();
 
-App.Router.map(function() {
-	this.route('technicalskills', {path: "/technical-skills"});
-	this.route('work', {path: "/work"});
-	this.route('blog', {path: "/blog"});
-	this.route('post', {path: "/blog/:post_id"});
-});
+	// App.Router.reopen({
+	// 	location: 'history'
+	// });
 
-App.IndexRoute = Ember.Route.extend({
-	model: function() {
-		return ['this', 'is', 'home'];
-	}
-});
+	App.Router.map(function() {
+		this.route('technicalskills', {path: "/technical-skills"});
+		this.route('work', {path: "/work"});
+		this.route('blog', {path: "/blog"});
+		this.route('post', {path: "/blog/:post_id"});
+	});
 
-App.TechnicalskillsRoute = Ember.Route.extend({
-	model: function(){
-		return ['this', 'is', 'technical skills'];
-	}
-});
+	App.IndexRoute = Ember.Route.extend({
+		model: function() {
+			return ['this', 'is', 'home'];
+		}
+	});
 
-App.WorkRoute = Ember.Route.extend({
-	model: function(){
-		return ['this', 'is', 'work'];
-	}
-});
+	App.TechnicalskillsRoute = Ember.Route.extend({
+		model: function(){
+			return ['this', 'is', 'technical skills'];
+		}
+	});
 
-App.BlogRoute = Ember.Route.extend({
-	model: function(){
-		return ['this', 'is', 'blog'];
-	}
-});
+	App.WorkRoute = Ember.Route.extend({
+		model: function(){
+			return ['this', 'is', 'work'];
+		}
+	});
 
-App.Post = Ember.Object.extend({});
+	App.BlogRoute = Ember.Route.extend({
+		model: function(){
+			return ['this', 'is', 'blog'];
+		}
+	});
 
-App.PostRoute = Ember.Route.extend({
-	model: function(params) {
-		posts = App.Post.create({
-			'one': ['text for post one'],
-			'two': ['text for post two'],
-		});
-		return posts.get(params.post_id);
-	},
-	serialize: function(post) {
-		return { post_id: post.get('id') };
-	}
-});
+	App.Post = Ember.Object.extend({});
+
+	App.PostRoute = Ember.Route.extend({
+		model: function(params) {
+			posts = App.Post.create({
+				'one': ['text for post one'],
+				'two': ['text for post two'],
+			});
+			return posts.get(params.post_id);
+		},
+		serialize: function(post) {
+			return { post_id: post.get('id') };
+		}
+	});
+
+})();
