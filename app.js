@@ -41,9 +41,12 @@
 
 	App.PostRoute = Ember.Route.extend({
 		model: function(params) {
+			var posts,
+				md = marked("**bold**");
 			posts = App.Post.create({
 				'one': ['text for post one'],
 				'two': ['text for post two'],
+				'markdown': [md],
 			});
 			return posts.get(params.post_id);
 		},
