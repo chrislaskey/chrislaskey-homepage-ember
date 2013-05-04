@@ -7,64 +7,64 @@
 </head>
 <body>
 
-  <script type="text/x-handlebars">
-    <h2>Welcome to Ember.js</h2>
+	<script type="text/x-handlebars">
+		<h2>Welcome to Ember.js</h2>
 
-    {{outlet}}
-  </script>
+		{{ partial navigation }}
 
-  <script type="text/x-handlebars" data-template-name="index">
-    <ul>
-	{{#linkTo technicalskills }}Technical Skills{{/linkTo}}
-	{{#linkTo work }}Work{{/linkTo}}
-	{{#linkTo blog }}Blog{{/linkTo}}
-    {{#each item in model}}
-      <li>{{item}}</li>
-    {{/each}}
-    </ul>
-  </script>
+		{{outlet}}
+	</script>
 
-  <script type="text/x-handlebars" data-template-name="technicalskills">
-    <ul>
-	{{#linkTo index }}Home{{/linkTo}}
-    {{#each item in model}}
-      <li>{{item}}</li>
-    {{/each}}
-    </ul>
-  </script>
+	<script type="text/x-handlebars" data-template-name="navigation">
+		<ul>
+			<li>{{#linkTo index }}Home{{/linkTo}}</li>
+			<li>{{#linkTo technicalskills }}Technical Skills{{/linkTo}}</li>
+			<li>{{#linkTo work }}Work{{/linkTo}}</li>
+			<li>{{#linkTo blog }}Blog{{/linkTo}}</li>
+		</ul>
+	</script>
 
-  <script type="text/x-handlebars" data-template-name="work">
-    <ul>
-	{{#linkTo index }}Home{{/linkTo}}
-    {{#each item in model}}
-      <li>{{item}}</li>
-    {{/each}}
-    </ul>
-  </script>
+	<script type="text/x-handlebars" data-template-name="index">
+		<ul>
+		{{#each item in model}}
+    		<li>{{item}}</li>
+		{{/each}}
+		</ul>
+	</script>
 
-  <script type="text/x-handlebars" data-template-name="blog">
-    <ul>
-	{{#linkTo index }}Home{{/linkTo}}
-    {{#each item in model}}
-      <li>{{item}}</li>
-    {{/each}}
-    </ul>
-  </script>
+	<script type="text/x-handlebars" data-template-name="technicalskills">
+		<ul>
+		{{#each item in model}}
+    		<li>{{item}}</li>
+		{{/each}}
+		</ul>
+	</script>
 
-  <script type="text/x-handlebars" data-template-name="post">
-    <ul>
-	{{#linkTo index }}Home{{/linkTo}}
-    {{#each item in model}}
-      <li>{{item}}</li>
-    {{/each}}
-    </ul>
-  </script>
+	<script type="text/x-handlebars" data-template-name="work">
+		<ul>
+		{{#each item in model}}
+    		<li>{{item}}</li>
+		{{/each}}
+		</ul>
+	</script>
 
-  <script src="static/js/libs/jquery-2.0.0.min.js"></script>
-  <script src="static/js/libs/handlebars-1.0.0-rc.3.js"></script>
-  <script src="static/js/libs/ember-1.0.0-rc.3.js"></script>
-  <script src="static/js/libs/marked.min.js"></script>
-  <script src="app.js"></script>
+	<script type="text/x-handlebars" data-template-name="blog">
+		<ul>
+		{{#each item in model}}
+    		<li>{{item}}</li>
+		{{/each}}
+		</ul>
+	</script>
+
+	<script type="text/x-handlebars" data-template-name="post">
+		<div class="post">{{{model}}}</div>
+	</script>
+
+	<script src="static/js/libs/jquery-2.0.0.min.js"></script>
+	<script src="static/js/libs/handlebars-1.0.0-rc.3.js"></script>
+	<script src="static/js/libs/ember-1.0.0-rc.3.js"></script>
+	<script src="static/js/libs/marked.min.js"></script>
+	<script src="app.js"></script>
 
 </body>
 </html>
