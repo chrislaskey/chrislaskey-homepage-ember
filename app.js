@@ -39,21 +39,20 @@
 
 	App.Post = Ember.Object.extend({});
 
+	App.Post.reopenClass({
+		post: function(post_id) {
+			postURI = "/static/posts/" + post_id;
+
+			return $.ajax(postURI).then(function(data){
+				var asMarkdown = marked(data);
+				return asMarkdown;
+			});
+		}
+	});
+
 	App.PostRoute = Ember.Route.extend({
 		model: function(params) {
-			var posts,
-				post,
-				md = marked("**bold**");
-			posts = App.Post.create({
-				'one': ['text for post one'],
-				'two': ['text for post two'],
-				'markdown': [md],
-			});
-			post = posts.get(params.post_id);
-			return post;
-		},
-		serialize: function(post) {
-			return { post_id: post.get('id') };
+			return App.Post.post(params.post_id);
 		}
 	});
 
