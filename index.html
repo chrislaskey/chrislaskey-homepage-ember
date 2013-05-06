@@ -9,7 +9,14 @@
 <body>
 
 	<script type="text/x-handlebars">
-		{{ partial navigation }}
+		<div class="wrapper wrapper-banner">
+			<div class="container header">
+				<div class="sixteen columns">
+					<a class="logo" href="/">Chris Laskey</a>
+					{{ partial navigation }}
+				</div>
+			</div>
+		</div>
 
 		{{outlet}}
 	</script>
