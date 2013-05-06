@@ -12,8 +12,10 @@
 		<div class="wrapper wrapper-banner">
 			<div class="container header">
 				<div class="sixteen columns">
-					<a class="logo" href="/">Chris Laskey</a>
-					{{ partial navigation }}
+					<a class="alpha six columns logo" href="/">Chris Laskey</a>
+					<div class="omega ten columns header-navigation">
+						{{ partial navigation }}
+					</div>
 				</div>
 			</div>
 		</div>
@@ -22,7 +24,7 @@
 	</script>
 
 	<script type="text/x-handlebars" data-template-name="_navigation">
-		<ul>
+		<ul class="navigation">
 			<li>{{#linkTo index }}About{{/linkTo}}</li>
 			<li>{{#linkTo technicalskills }}Technical Skills{{/linkTo}}</li>
 			<li>{{#linkTo work }}Work{{/linkTo}}</li>
