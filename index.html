@@ -9,27 +9,38 @@
 <body>
 
 	<script type="text/x-handlebars">
-		<div class="wrapper wrapper-header">
-			<div class="container header">
+		<div class="wrapper" id="wrapper-header">
+			<div class="container" id="header">
 				<div class="sixteen columns">
-					<a class="alpha six columns logo" href="/">Chris Laskey</a>
-					<div class="omega ten columns header-navigation">
+					<a class="alpha six columns" href="/" id="logo">Chris Laskey</a>
+					<div class="omega ten columns" id="header-navigation">
 						{{ partial navigation }}
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<div class="wrapper wrapper-banner">
-			<div class="container banner">
-				<div class="sixteen columns">
+		<div class="wrapper" id="wrapper-banner">
+			<div class="container" id="banner">
+				<div class="sixteen columns alpha omega">
 					<h2>A Full Stack Software Engineer</h2>
 					<h3>combining craftsmanship with pragmatism</h3>
 				</div>
 			</div>
 		</div>
 
-		{{outlet}}
+		<div class="wrapper" id="wrapper-main">
+			<div class="container" id="main">
+				<div class="twelve columns alpha" id="content">
+					{{outlet}}
+				</div>
+				<div class="four columns omega" id="sidebar">
+					<div id="sidebar-navigation">
+						{{ partial navigation }}
+					</div>
+				</div>
+			</div>
+		</div>
 	</script>
 
 	<script type="text/x-handlebars" data-template-name="_navigation">
