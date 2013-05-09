@@ -42,20 +42,7 @@
 	});
 
 	App.Posts = Ember.Object.extend({
-		_posts: [
-			{
-				title: "Example blog post",
-				date: "2012-12-11",
-				id: "405",
-				uri: "#/blog/example.md",
-			},
-			{
-				title: "Example blog post two (redirects to home)",
-				date: "2012-12-10",
-				id: "400",
-				uri: "/",
-			},
-		],
+		_posts: AppData.getPosts(),
 
 		get: function(){
 			return this._posts;
@@ -101,7 +88,7 @@
 
 	App.Post.reopenClass({
 		post: function(post_id) {
-			postURI = "/static/posts/" + post_id;
+			var postURI = "/static/posts/" + post_id;
 
 			return $.ajax(postURI).then(function(data){
 				var asMarkdown = marked(data);
