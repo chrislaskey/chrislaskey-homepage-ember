@@ -75,6 +75,8 @@
 			return posts;
 		},
 
+		// TODO: Deprecated. Metadata does not appear to be needed in the
+		// display of actual individual blog posts.
 		find: function(itemProperty){
 			var posts = App.Posts.create(),
 				post;
@@ -110,8 +112,6 @@
 
 	App.PostRoute = Ember.Route.extend({
 		model: function(params) {
-			var metadata = App.Posts.find({id: "400"});
-			// TODO: use metadata? Or is it not needed? 
 			return App.Post.post(params.post_id);
 		}
 	});
