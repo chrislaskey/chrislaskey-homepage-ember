@@ -44,7 +44,8 @@ a{
 	}
 
 		#content{
-
+			margin:0px;
+			padding:26px 0px 0px 0px;
 		}
 
 		#sidebar{
@@ -75,16 +76,70 @@ a{
 		padding:0px;
 	}
 
+		.navigation a{
+			display:block;
+			width:100%;
+		}
+
+// Sidebar content
+
+#sidebar .navigation{
+	display:block;
+	margin:0px;
+	padding:73px 0px 0px 0px;
+	width:100%;
+}
+
+	#sidebar .navigation li{
+		display:block;
+		font:normal 20px/32px Georgia, serif;
+		font-style:italic;
+		text-transform:lowercase;
+		width:100%;
+	}
+
+// Page content
+
+#content h1{
+	font-size:30px;
+	font-weight:normal;
+	line-height:30px;
+	margin:0px 0px 0px 0px;
+	text-transform:uppercase;
+}
+
+#content p{
+	font-size:18px;
+	line-height:24px;
+	margin:1em 0px;
+}
+
+	#content p.intro{
+		font:normal 20px/26px Georgia, serif;
+	}
+
+#content ul{
+	font-size:17px;
+	line-height:24px;
+	margin:1em 0px;
+}
+
 // Contact content
 
 #contact h4{
 	display:block;
+	font-size:40px;
+	font-weight:normal;
+	line-height:24px;
 	text-align:center;
 	width:100%;
 }
 
 #contact p{
 	display:block;
+	font-size:18px;
+	line-height:24px;
+	margin:1em 0px;
 	text-align:center;
 	width:100%;
 }
