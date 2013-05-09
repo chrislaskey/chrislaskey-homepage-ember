@@ -1,8 +1,18 @@
+// Variables
+
+@font-sans-roman: "Brandon Grotesque Regular", Helvetica Neue, Helvetica, Arial, sans-serif;
+@font-sans-medium: "Brandon Grotesque Medium", Helvetica Neue, Helvetica, Arial, sans-serif;
+
+@font-sans-alt-roman: "Avenir LT Std Roman", Helvetica Neue, Helvetica, Arial, sans-serif;
+
+@font-serif-roman: "Adelle Regular", Georgia, Times, serif;
+@font-serif-italic: "Adelle Italic", Georgia, Times, serif;
+
 // Universals
 
 html, body{
 	color:#303f48;
-	font-family:Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-family:@font-sans-roman;
 	margin:0px;
 	padding:0px;
 	width:100%;
@@ -85,9 +95,7 @@ a{
 
 #logo{
 	color:#303f48;
-	font-size:26px;
-	font-weight:normal;
-	line-height:26px;
+	font:normal 26px/26px @font-sans-roman;
 	margin:0px;
 	padding:26px 0px 0px 0px;
 	text-transform:uppercase;
@@ -104,8 +112,7 @@ a{
 
 	#sidebar .navigation li{
 		display:block;
-		font:normal 20px/32px Georgia, serif;
-		font-style:italic;
+		font:normal 20px/32px @font-serif-italic;
 		text-transform:lowercase;
 		width:100%;
 	}
@@ -113,26 +120,22 @@ a{
 // Page content
 
 #content h1{
-	font-size:30px;
-	font-weight:normal;
-	line-height:30px;
+	font:normal 30px/30px @font-sans-medium;
 	margin:0px 0px 0px 0px;
 	text-transform:uppercase;
 }
 
 #content p{
-	font-size:18px;
-	line-height:24px;
+	font:normal 18px/24px @font-sans-alt-roman;
 	margin:1em 0px;
 }
 
 	#content p.intro{
-		font:normal 20px/26px Georgia, serif;
+		font:normal 20px/26px @font-serif-roman;
 	}
 
 #content ul{
-	font-size:17px;
-	line-height:24px;
+	font:normal 17px/24px @font-sans-roman;
 	margin:1em 0px;
 }
 
@@ -140,17 +143,14 @@ a{
 
 #contact h4{
 	display:block;
-	font-size:40px;
-	font-weight:normal;
-	line-height:24px;
+	font:normal 40px/24px @font-sans-alt-roman;
 	text-align:center;
 	width:100%;
 }
 
 #contact p{
 	display:block;
-	font-size:18px;
-	line-height:24px;
+	font:normal 18px/24px @font-sans-alt-roman;
 	margin:1em 0px;
 	text-align:center;
 	width:100%;
