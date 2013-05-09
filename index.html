@@ -48,7 +48,7 @@
 			<li>{{#linkTo index }}About{{/linkTo}}</li>
 			<li>{{#linkTo technicalskills }}Technical Skills{{/linkTo}}</li>
 			<li>{{#linkTo work }}Work{{/linkTo}}</li>
-			<li>{{#linkTo blog }}Blog{{/linkTo}}</li>
+			<li>{{#linkTo posts }}Blog{{/linkTo}}</li>
 		</ul>
 	</script>
 
@@ -126,12 +126,17 @@
 		view.chrislaskey.com - an image bookmarking Django app with matching Chrome Extension
 	</script>
 
-	<script type="text/x-handlebars" data-template-name="blog">
+	<script type="text/x-handlebars" data-template-name="posts">
 		<h1>Blog</h1>
 
-		<ul>
-		{{#each item in model}}
-    		<li>{{item}}</li>
+		<ul class="blog-posts">
+		{{#each post in model}}
+    		<li>
+				<a href="{{unbound post.uri}}">
+    				<span class="title">{{post.title}}</span>
+    				<span class="date">{{post.date}}</span>
+    			</a>
+    		</li>
 		{{/each}}
 		</ul>
 	</script>
