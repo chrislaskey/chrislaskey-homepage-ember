@@ -1,22 +1,79 @@
 // Variables
 
+@text-color:#3d5360;
+
 @font-sans-thin: "Brandon Grotesque Thin", Helvetica Neue, Helvetica, Arial, sans-serif;
 @font-sans-roman: "Brandon Grotesque Regular", Helvetica Neue, Helvetica, Arial, sans-serif;
 @font-sans-medium: "Brandon Grotesque Medium", Helvetica Neue, Helvetica, Arial, sans-serif;
-
-@font-sans-alt-roman: "Avenir LT Std Roman", Helvetica Neue, Helvetica, Arial, sans-serif;
-
+@font-sans-alt-roman: "Avenir Roman", Helvetica Neue, Helvetica, Arial, sans-serif;
 @font-serif-roman: "Adelle Regular", Georgia, Times, serif;
 @font-serif-roman-italic: "Adelle Italic", Georgia, Times, serif;
+
+// Font faces
+
+@font-face {
+	font-family: 'Brandon Grotesque Thin';
+	src: url('../fonts/Brandon_thin.eot'); /* IE9 Compat Modes */
+	src: url('../fonts/Brandon_thin.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	     url('../fonts/Brandon_thin.woff') format('woff'), /* Modern Browsers */
+	     url('../fonts/Brandon_thin.ttf')  format('truetype'), /* Safari, Android, iOS */
+	     url('../fonts/Brandon_thin.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+	font-family: 'Brandon Grotesque Regular';
+	src: url('../fonts/Brandon_reg.eot'); /* IE9 Compat Modes */
+	src: url('../fonts/Brandon_reg.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	     url('../fonts/Brandon_reg.woff') format('woff'), /* Modern Browsers */
+	     url('../fonts/Brandon_reg.ttf')  format('truetype'), /* Safari, Android, iOS */
+	     url('../fonts/Brandon_reg.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+	font-family: 'Brandon Grotesque Medium';
+	src: url('../fonts/Brandon_med.eot'); /* IE9 Compat Modes */
+	src: url('../fonts/Brandon_med.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	     url('../fonts/Brandon_med.woff') format('woff'), /* Modern Browsers */
+	     url('../fonts/Brandon_med.ttf')  format('truetype'), /* Safari, Android, iOS */
+	     url('../fonts/Brandon_med.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+	font-family: 'Avenir Roman';
+	src: url('../fonts/AvenirLTStd-Roman.eot'); /* IE9 Compat Modes */
+	src: url('../fonts/AvenirLTStd-Roman.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	     url('../fonts/AvenirLTStd-Roman.woff') format('woff'), /* Modern Browsers */
+	     url('../fonts/AvenirLTStd-Roman.ttf')  format('truetype'), /* Safari, Android, iOS */
+	     url('../fonts/AvenirLTStd-Roman.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+	font-family: 'Adelle Regular';
+	src: url('../fonts/adelle_regular-webfont.eot'); /* IE9 Compat Modes */
+	src: url('../fonts/adelle_regular-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	     url('../fonts/adelle_regular-webfont.woff') format('woff'), /* Modern Browsers */
+	     url('../fonts/adelle_regular-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+	     url('../fonts/adelle_regular-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+	font-family: 'Adelle Italic';
+	src: url('../fonts/adelle_italic-webfont.eot'); /* IE9 Compat Modes */
+	src: url('../fonts/adelle_italic-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	     url('../fonts/adelle_italic-webfont.woff') format('woff'), /* Modern Browsers */
+	     url('../fonts/adelle_italic-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+	     url('../fonts/adelle_italic-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
 
 // Universals
 
 html, body{
-	color:#303f48;
-	font-family:@font-sans-roman;
+	color:@text-color;
+	font:normal 18px/24px @font-sans-alt-roman;
 	margin:0px;
 	padding:0px;
 	width:100%;
+	-webkit-font-smoothing:	antialiased;
 }
 
 a{
@@ -34,7 +91,7 @@ a{
 }
 
 	#header{
-		height:78px;
+		height:84px;
 	}
 
 #wrapper-banner{
@@ -43,10 +100,11 @@ a{
 
 	#banner{
 		color:#fff;
-		height:480px;
+		height:540px;
 	}
 
 #wrapper-main{
+	background:#fff;
 	background:#fff;
 }
 
@@ -88,7 +146,7 @@ a{
 	}
 
 		.navigation a{
-			color:#303f48;
+			color:@text-color;
 			display:block;
 			width:100%;
 		}
@@ -96,10 +154,10 @@ a{
 // Header content
 
 #logo{
-	color:#303f48;
-	font:normal 26px/26px @font-sans-roman;
+	color:@text-color;
+	font:normal 26px/24px @font-sans-roman;
 	margin:0px;
-	padding:26px 0px 0px 0px;
+	padding:30px 0px 0px 0px;
 	text-transform:uppercase;
 }
 
@@ -107,7 +165,7 @@ a{
 	display:block;
 	font:normal 18px/26px @font-serif-roman;
 	float:right;
-	padding:26px 0px 0px 0px;
+	padding:30px 0px 0px 0px;
 	text-transform:lowercase;
 	width:auto;
 }
@@ -119,19 +177,20 @@ a{
 // Banner content
 
 #banner h2{
-	font:normal 80px/70px @font-sans-thin;
+	font:normal 84px/70px @font-sans-thin;
 	margin:0px;
-	padding:140px 0px 24px 0px;
-	text-shadow:1px 2px 1px rgba(0, 0, 0, 0.15);
+	padding:170px 0px 28px 0px;
+	text-shadow:1px 2px 1px rgba(0, 0, 0, 0.25);
+	text-transform:uppercase;
 }
 
 #banner h3{
 	background: rgba(255, 255, 255, 0.1);
 	display:inline-block;
-	font:normal 26px/26px @font-serif-roman-italic;
+	font:normal 28px/28px @font-serif-roman-italic;
 	margin:0px;
 	padding:4px 4px;
-	text-shadow:1px 2px 1px rgba(0, 0, 0, 0.15);
+	text-shadow:1px 2px 1px rgba(0, 0, 0, 0.25);
 	width:auto;
 }
 
@@ -166,7 +225,7 @@ a{
 	}
 
 #content ul{
-	font:normal 17px/24px @font-sans-roman;
+	font:normal 17px/24px @font-sans-alt-roman;
 	margin:1em 0px;
 }
 
