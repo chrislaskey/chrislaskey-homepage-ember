@@ -1,6 +1,9 @@
 // Variables
 
 @text-color:#3a434c;
+@text-anchor:#298cbf;
+@text-highlight:#3ecceb;
+@text-alt-highlight:#abdd3e;
 
 @font-sans-thin: "Brandon Grotesque Thin", Helvetica Neue, Helvetica, Arial, sans-serif;
 @font-sans-roman: "Brandon Grotesque Regular", Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -87,16 +90,12 @@ a{
 }
 
 #wrapper-header{
-	background:#fff;
+	background:#1b659f url('/static/images/banner_waves.jpg') 50% 55% no-repeat;
 }
 
 	#header{
 		height:78px;
 	}
-
-#wrapper-banner{
-	background:#1b659f url('/static/images/banner_waves.jpg') 50% 60% no-repeat;
-}
 
 	#banner{
 		color:#fff;
@@ -105,31 +104,39 @@ a{
 
 #wrapper-main{
 	background:#fff;
-	background:#fff;
 }
 
 	#main{
-		padding:0px 0px 30px 0px;
+		padding:60px 0px 60px 0px;
 	}
 
 		#content{
 			margin:0px;
-			padding:40px 0px 0px 0px;
+			padding:0px;
 		}
 
 		#sidebar{
-			padding-top:92px;
+			padding-top:52px;
 		}
 
 #wrapper-contact{
-	background:#f2f7fb;
+	background:#1b659f url('/static/images/diagmonds.png') top center repeat;
 }
 
 	#contact{
+		color:#eaf3f6;
 		padding:100px 0px 80px 0px;
 	}
 
 // Common elements
+
+.highlight{
+	color:@text-highlight;
+}
+
+.alt-highlight{
+	color:@text-alt-highlight;
+}
 
 .navigation{
 	display:inline-block;
@@ -184,14 +191,11 @@ a{
 // Header content
 
 #logo{
-	color:@text-color;
-	font:normal 26px/24px @font-sans-roman;
+	color:#fff;
+	font:normal 28px/26px @font-sans-roman;
 	margin:0px;
 	padding:26px 0px 0px 0px;
 	text-transform:uppercase;
-
-	color:#fff;
-	font:normal 28px/26px @font-sans-roman;
 }
 
 #header .navigation{
@@ -207,9 +211,9 @@ a{
 		padding-left:15px;
 	}
 
-		#header .navigation li a{
-
-		}
+	#header .navigation a{
+		color:darken(@text-color, 5%);
+	}
 
 // Banner content
 
@@ -217,7 +221,7 @@ a{
 	font:normal 84px/70px @font-sans-thin;
 	margin:0px;
 	padding:120px 0px 28px 0px;
-	text-shadow:1px 2px 1px rgba(0, 0, 0, 0.25);
+	text-shadow:1px 1px 2px rgba(0, 0, 0, 0.30);
 	text-transform:uppercase;
 }
 
@@ -227,7 +231,7 @@ a{
 	font:normal 28px/28px @font-serif-roman-italic;
 	margin:0px;
 	padding:4px 4px;
-	text-shadow:1px 2px 1px rgba(0, 0, 0, 0.25);
+	text-shadow:1px 2px 1px rgba(0, 0, 0, 0.15);
 	width:auto;
 }
 
