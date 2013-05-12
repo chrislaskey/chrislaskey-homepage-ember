@@ -1,4 +1,5 @@
 Fixing Google Map Toolbars in Responsive Websites
+=================================================
 
 February 2, 2013
 

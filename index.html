@@ -170,7 +170,10 @@
 	</script>
 
 	<script type="text/x-handlebars" data-template-name="post">
-		<div class="post">{{{model}}}</div>
+		<div id="post">{{{model}}}</div>
+		<div id="after-content">
+			<p class="blog-link">{{#linkTo posts }}back to blog{{/linkTo}}</p>
+		</div>
 	</script>
 
 	<script src="static/js/libs/jquery-2.0.0.min.js"></script>
