@@ -3,17 +3,17 @@ var AppData = (function(){
 	var _posts = [
 
 		{
-			title: "Example blog post",
-			date: "2012-12-11",
-			id: "405",
-			uri: "#/blog/example.md",
+			title: "Deploying Python Flask with Mod_WSGI",
+			date: "2013-02-23",
+			id: "580",
+			uri: "#/blog/580-deploying-python-flask-with-mod_wsgi.md",
 		},
 
 		{
-			title: "Example blog post two (redirects to home)",
-			date: "2012-12-10",
-			id: "400",
-			uri: "/",
+			title: "Fixing Google Map Toolbars in Responsive Websites",
+			date: "2013-02-02",
+			id: "577",
+			uri: "#/blog/577-fixing-google-map-toolbars-in-responsive-websites.md",
 		},
 
 	];
