@@ -157,10 +157,11 @@
 	<script type="text/x-handlebars" data-template-name="posts">
 		<h1>Blog</h1>
 
+		<p class="intro">Over the years I've written on a variety of technical topics. Past content will added in time</p>
 		<ul class="blog-posts">
 		{{#each post in model}}
     		<li>
-				<a href="{{unbound post.uri}}">
+    			<a href="{{unbound post.uri}}">
     				<span class="title">{{post.title}}</span>
     				<span class="date">{{post.date}}</span>
     			</a>
