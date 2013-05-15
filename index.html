@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<title>Chris Laskey</title>
-	<link rel="stylesheet" href="static/css/skeleton.css">
-	<link rel="stylesheet/less" href="static/css/main.less">
+	<link rel="stylesheet" href="/static/css/skeleton.css">
+	<link rel="stylesheet/less" href="/static/css/main.less">
 </head>
 <body>
 
@@ -175,7 +175,7 @@
 		<ul class="blog-posts">
 		{{#each post in model}}
     		<li>
-    			<a href="{{unbound post.uri}}">
+    			<a href="/blog/{{unbound post.uri}}">
     				<span class="title">{{post.title}}</span>
     				<span class="date">{{post.date}}</span>
     			</a>
@@ -195,14 +195,14 @@
 		<h1>Page not found</h1>
 	</script>
 
-	<script src="static/js/libs/jquery-2.0.0.min.js"></script>
-	<script src="static/js/libs/handlebars-1.0.0-rc.3.js"></script>
-	<script src="static/js/libs/ember-1.0.0-rc.3.js"></script>
-	<script src="static/js/libs/marked.min.js"></script>
-	<script src="static/js/libs/less-1.3.3.min.js"></script>
-	<script src="static/js/libs/underscore-min.js"></script>
-	<script src="static/js/appdata.js"></script>
-	<script src="app.js"></script>
+	<script src="/static/js/libs/jquery-2.0.0.min.js"></script>
+	<script src="/static/js/libs/handlebars-1.0.0-rc.3.js"></script>
+	<script src="/static/js/libs/ember-1.0.0-rc.3.js"></script>
+	<script src="/static/js/libs/marked.min.js"></script>
+	<script src="/static/js/libs/less-1.3.3.min.js"></script>
+	<script src="/static/js/libs/underscore-min.js"></script>
+	<script src="/static/js/appdata.js"></script>
+	<script src="/app.js"></script>
 
 </body>
 </html>

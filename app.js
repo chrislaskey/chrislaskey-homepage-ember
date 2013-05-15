@@ -2,13 +2,13 @@
 
 	window.App = Ember.Application.create();
 
+	App.Router.reopen({
+		location: 'history'
+	});
+
 	App.config = {
 		BLOG_POSTS_PER_PAGE: 3,
 	}
-
-	// App.Router.reopen({
-	// 	location: 'history'
-	// });
 
 	App.Router.map(function() {
 		this.route('technicalskills', {path: "/technical-skills"});
