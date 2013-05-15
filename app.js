@@ -15,29 +15,30 @@
 		this.route('work', {path: "/work"});
 		this.route('posts', {path: "/blog"});
 		this.route('post', {path: "/blog/:post_id"});
+		this.route('error404', {path: "*:"});
 	});
 
 	App.IndexRoute = Ember.Route.extend({
 		model: function() {
-			return ['this', 'is', 'home'];
+			return;
 		}
 	});
 
 	App.TechnicalskillsRoute = Ember.Route.extend({
 		model: function(){
-			return ['this', 'is', 'technical skills'];
+			return;
 		}
 	});
 
 	App.WorkRoute = Ember.Route.extend({
 		model: function(){
-			return ['this', 'is', 'work'];
+			return;
 		}
 	});
 
 	App.BlogRoute = Ember.Route.extend({
 		model: function(){
-			return ['this', 'is', 'blog'];
+			return;
 		}
 	});
 
@@ -100,6 +101,12 @@
 	App.PostRoute = Ember.Route.extend({
 		model: function(params) {
 			return App.Post.post(params.post_id);
+		}
+	});
+
+	App.Error404Route = Ember.Route.extend({
+		model: function(){
+			return;
 		}
 	});
 
