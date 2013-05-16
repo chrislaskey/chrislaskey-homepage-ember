@@ -31,6 +31,13 @@ var AppData = (function(){
 		},
 
 		{
+			title: "Embracing JavaScript as a Mature Language",
+			date: "2010-09-13",
+			id: "32",
+			uri: "32-embracing-javascript-as-a-mature-language.md",
+		},
+
+		{
 			title: "Learning Without Hubris",
 			date: "2010-07-27",
 			id: "142",
