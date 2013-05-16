@@ -30,6 +30,13 @@ var AppData = (function(){
 			uri: "541-running-jenkinshudson-on-port-80-using-iptables.md",
 		},
 
+		{
+			title: "Learning Without Hubris",
+			date: "2010-07-27",
+			id: "142",
+			uri: "142-learning-without-hubris.md",
+		},
+
 	];
 
 	return {
