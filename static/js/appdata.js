@@ -23,6 +23,13 @@ var AppData = (function(){
 			uri: "577-fixing-google-map-toolbars-in-responsive-websites.md",
 		},
 
+		{
+			title: "Running Jenkins/Hudson on Port 80 Using Iptables",
+			date: "2013-01-15",
+			id: "541",
+			uri: "541-running-jenkinshudson-on-port-80-using-iptables.md",
+		},
+
 	];
 
 	return {
