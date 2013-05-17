@@ -31,6 +31,13 @@ var AppData = (function(){
 		},
 
 		{
+			title: "Breaking Through The Little Schemer multirember&co Wall",
+			date: "2011-06-05",
+			id: "249",
+			uri: "249-breaking-through-the-little-schemer-multiremberco-wall.md",
+		},
+
+		{
 			title: "Using Redis-cli with Multiple Local Instances",
 			date: "2011-06-02",
 			id: "238",
