@@ -31,6 +31,13 @@ var AppData = (function(){
 		},
 
 		{
+			title: "I Still Prefer Print",
+			date: "2010-12-29",
+			id: "171",
+			uri: "171-i-still-prefer-print.md",
+		},
+
+		{
 			title: "Embracing JavaScript as a Mature Language",
 			date: "2010-09-13",
 			id: "32",
