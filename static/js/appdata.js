@@ -31,6 +31,13 @@ var AppData = (function(){
 		},
 
 		{
+			title: "Using Redis-cli with Multiple Local Instances",
+			date: "2011-06-02",
+			id: "238",
+			uri: "238-using-redis-cli-with-multiple-local-instances.md",
+		},
+
+		{
 			title: "I Still Prefer Print",
 			date: "2010-12-29",
 			id: "171",
