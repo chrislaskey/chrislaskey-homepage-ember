@@ -31,6 +31,13 @@ var AppData = (function(){
 		},
 
 		{
+			title: "Preserving a Copy in Linux with Tar",
+			date: "2011-06-14",
+			id: "281",
+			uri: "281-preserving-a-copy-in-linux-with-tar.md",
+		},
+
+		{
 			title: "Breaking Through The Little Schemer multirember&co Wall",
 			date: "2011-06-05",
 			id: "249",
