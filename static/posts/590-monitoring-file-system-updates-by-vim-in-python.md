@@ -16,10 +16,12 @@ In Python this information can be read using the standard library's
 `os.path.getmtime()` method. Combined with a simple polling mechanism, it's
 easy to monitor and trigger events based on file system updates by VIM.
 
-[For an example of this in action see the `build-assets` repository on
-github](https://github.com/chrislaskey/build-assets) where the
-`build-monitory.py` file uses polling to trigger Ant / Buildr scripts for tasks
-like compiling LESS, minifying CSS, and combining JavaScript files.
+For an example of this in action see my
+[build-monitory.py](https://github.com/chrislaskey/build-assets/blob/github/build-monitor.py)
+script which is part of a [build-assets](https://github.com/chrislaskey/build-assets)
+repository on github. The `build-monitor.py` file uses polling to trigger Ant /
+Buildr scripts for tasks like compiling LESS, minifying CSS, and combining
+JavaScript files.
 
 VIM is an Edge Case
 -------------------

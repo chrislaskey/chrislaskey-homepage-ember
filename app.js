@@ -7,7 +7,7 @@
 	});
 
 	App.config = {
-		BLOG_POSTS_PER_PAGE: 10,
+		BLOG_POSTS_PER_PAGE: 30,
 	}
 
 	App.Router.map(function() {
