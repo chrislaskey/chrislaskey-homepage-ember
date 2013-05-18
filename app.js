@@ -13,8 +13,17 @@
 	App.Router.map(function() {
 		this.route('technicalskills', {path: "/technical-skills"});
 		this.route('work', {path: "/work"});
-		this.route('posts', {path: "/blog"});
-		this.route('post', {path: "/blog/:post_id"});
+		// this.route('posts', {path: "/blog"});
+		// this.route('post', {path: "/blog/:post_id"});
+		// TODO:
+		//	- update "posts" link to go to "blog" instead
+		//	- create BlogIndex and BlogPost route and model functions
+		this.resource('posts', 
+			{path:"/blog"},
+			function(){
+				this.route('post', {path: ":post_id"});
+			}
+		);
 		this.route('error404', {path: "*:"});
 	});
 
