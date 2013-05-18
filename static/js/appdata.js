@@ -31,6 +31,13 @@ var AppData = (function(){
 		},
 
 		{
+			title: "Running Multiple Redis Instances on the Same Server",
+			date: "2011-08-06",
+			id: "342",
+			uri: "342-running-multiple-redis-instances-on-the-same-server.md",
+		},
+
+		{
 			title: "Preserving a Copy in Linux with Tar",
 			date: "2011-06-14",
 			id: "281",
