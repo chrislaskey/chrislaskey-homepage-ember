@@ -86,9 +86,9 @@
 		}
 	});
 
-	App.Post = Ember.Object.extend({});
+	App.BlogPost = Ember.Object.extend({});
 
-	App.Post.reopenClass({
+	App.BlogPost.reopenClass({
 		post: function(post_id) {
 			var postURI = "/static/posts/" + post_id;
 
@@ -99,9 +99,9 @@
 		}
 	});
 
-	App.PostRoute = Ember.Route.extend({
+	App.BlogPostRoute = Ember.Route.extend({
 		model: function(params) {
-			return App.Post.post(params.post_id);
+			return App.BlogPost.post(params.post_id);
 		}
 	});
 
