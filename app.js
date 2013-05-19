@@ -16,12 +16,9 @@
 		// TODO:
 		//	- update "posts" link to go to "blog" instead
 		//	- create BlogIndex and BlogPost route and model functions
-		this.resource('blog', 
-			{path:"/blog"}, // TODO: Should be able to remove this once everything is up and running.
-			function(){
-				this.route('post', {path: ":post_id"});
-			}
-		);
+		this.resource('blog', function(){
+			this.route('post', {path: ":post_id"});
+		});
 		this.route('error404', {path: "*:"});
 	});
 
