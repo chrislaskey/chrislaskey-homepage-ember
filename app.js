@@ -13,13 +13,11 @@
 	App.Router.map(function() {
 		this.route('technicalskills', {path: "/technical-skills"});
 		this.route('work', {path: "/work"});
-		// this.route('posts', {path: "/blog"});
-		// this.route('post', {path: "/blog/:post_id"});
 		// TODO:
 		//	- update "posts" link to go to "blog" instead
 		//	- create BlogIndex and BlogPost route and model functions
-		this.resource('posts', 
-			{path:"/blog"},
+		this.resource('blog', 
+			{path:"/blog"}, // TODO: Should be able to remove this once everything is up and running.
 			function(){
 				this.route('post', {path: ":post_id"});
 			}
@@ -45,13 +43,7 @@
 		}
 	});
 
-	App.BlogRoute = Ember.Route.extend({
-		model: function(){
-			return;
-		}
-	});
-
-	App.Posts = Ember.Object.extend({
+	App.BlogIndex = Ember.Object.extend({
 		_posts: AppData.getPosts(),
 
 		get: function(){
@@ -59,12 +51,12 @@
 		}
 	});
 
-	App.Posts.reopenClass({
+	App.BlogIndex.reopenClass({
 		findAll: function(start, stop){
 			if( typeof start === 'undefined' ){ start = 0; }
 			if( typeof stop === 'undefined' ){ stop = 0; }
 
-			var postsData = App.Posts.create(),
+			var postsData = App.BlogIndex.create(),
 				allPosts = postsData.get(),
 				posts = [];
 
@@ -75,7 +67,7 @@
 		// TODO: Deprecated. Metadata does not appear to be needed in the
 		// display of actual individual blog posts.
 		find: function(itemProperty){
-			var posts = App.Posts.create(),
+			var posts = App.BlogIndex.create(),
 				post;
 
 			if( _.isObject(itemProperty) ){
@@ -86,10 +78,10 @@
 		}
 	});
 
-	App.PostsRoute = Ember.Route.extend({
+	App.BlogIndexRoute = Ember.Route.extend({
 		model: function(){
 			var perPage = App.config.BLOG_POSTS_PER_PAGE,
-				posts = App.Posts.findAll(0, perPage);
+				posts = App.BlogIndex.findAll(0, perPage);
 			return posts;
 		}
 	});

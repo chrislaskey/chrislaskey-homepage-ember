@@ -75,7 +75,7 @@
 			<li>{{#linkTo index }}About{{/linkTo}}</li>
 			<li>{{#linkTo technicalskills }}Technical Skills{{/linkTo}}</li>
 			<li>{{#linkTo work }}Work{{/linkTo}}</li>
-			<li>{{#linkTo posts }}Blog{{/linkTo}}</li>
+			<li>{{#linkTo blog.index }}Blog{{/linkTo}}</li>
 		</ul>
 	</script>
 
@@ -168,7 +168,7 @@
 		<p>Want to see something in particular? Don't hesitate to contact me. I'd be happy to share.</p>
 	</script>
 
-	<script type="text/x-handlebars" data-template-name="posts">
+	<script type="text/x-handlebars" data-template-name="blog/index">
 		<h1>Blog</h1>
 
 		<p class="intro">Over the years I've written on a variety of technical topics. Past content will added in time</p>
@@ -184,10 +184,10 @@
 		</ul>
 	</script>
 
-	<script type="text/x-handlebars" data-template-name="post">
+	<script type="text/x-handlebars" data-template-name="blog/post">
 		<div id="post">{{{model}}}</div>
 		<div id="after-content">
-			<p class="blog-link">{{#linkTo posts }}back to blog{{/linkTo}}</p>
+			<p class="blog-link">{{#linkTo blog.index }}back to blog{{/linkTo}}</p>
 		</div>
 	</script>
 
