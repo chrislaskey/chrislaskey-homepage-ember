@@ -13,11 +13,10 @@
 	App.Router.map(function() {
 		this.route('technicalskills', {path: "/technical-skills"});
 		this.route('work', {path: "/work"});
-		// TODO:
-		//	- update "posts" link to go to "blog" instead
-		//	- create BlogIndex and BlogPost route and model functions
 		this.resource('blog', function(){
-			this.route('post', {path: ":post_id"});
+			this.resource('post', {path: ":post_id"}, function(){
+				this.route('uri', {path: ":post_uri"});
+			});
 		});
 		this.route('error404', {path: "*:"});
 	});
@@ -40,7 +39,7 @@
 		}
 	});
 
-	App.BlogIndex = Ember.Object.extend({
+	App.BlogPosts = Ember.Object.extend({
 		_posts: AppData.getPosts(),
 
 		get: function(){
@@ -48,12 +47,12 @@
 		}
 	});
 
-	App.BlogIndex.reopenClass({
+	App.BlogPosts.reopenClass({
 		findAll: function(start, stop){
 			if( typeof start === 'undefined' ){ start = 0; }
 			if( typeof stop === 'undefined' ){ stop = 0; }
 
-			var postsData = App.BlogIndex.create(),
+			var postsData = App.BlogPosts.create(),
 				allPosts = postsData.get(),
 				posts = [];
 
@@ -61,10 +60,8 @@
 			return posts;
 		},
 
-		// TODO: Deprecated. Metadata does not appear to be needed in the
-		// display of actual individual blog posts.
 		find: function(itemProperty){
-			var posts = App.BlogIndex.create(),
+			var posts = App.BlogPosts.create(),
 				post;
 
 			if( _.isObject(itemProperty) ){
@@ -78,15 +75,17 @@
 	App.BlogIndexRoute = Ember.Route.extend({
 		model: function(){
 			var perPage = App.config.BLOG_POSTS_PER_PAGE,
-				posts = App.BlogIndex.findAll(0, perPage);
+				posts = App.BlogPosts.findAll(0, perPage);
 			return posts;
 		}
 	});
 
-	App.BlogPost = Ember.Object.extend({});
+	App.Post = Ember.Object.extend({});
 
-	App.BlogPost.reopenClass({
+	App.Post.reopenClass({
 		post: function(post_id) {
+			//TODO: Update post lookup to use numeric post_id only.
+			//		Requires hooking into App.BlogPosts data object
 			var postURI = "/static/posts/" + post_id;
 
 			return $.ajax(postURI).then(function(data){
@@ -96,9 +95,9 @@
 		}
 	});
 
-	App.BlogPostRoute = Ember.Route.extend({
+	App.PostRoute = Ember.Route.extend({
 		model: function(params) {
-			return App.BlogPost.post(params.post_id);
+			return App.Post.post(params.post_id);
 		}
 	});
 
