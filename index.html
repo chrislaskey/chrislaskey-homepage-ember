@@ -175,7 +175,7 @@
 		<ul class="blog-posts">
 		{{#each post in model}}
     		<li>
-    			<a href="/blog/{{unbound post.uri}}">
+    			<a href="/blog/{{unbound post.id}}/{{unbound post.uri}}">
     				<span class="title">{{post.title}}</span>
     				<span class="date">{{post.date}}</span>
     			</a>

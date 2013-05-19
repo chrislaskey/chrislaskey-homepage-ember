@@ -8,6 +8,7 @@
 
 	App.config = {
 		BLOG_POSTS_PER_PAGE: 30,
+		BLOG_POSTS_DIR: "/static/posts/",
 	}
 
 	App.Router.map(function() {
@@ -65,7 +66,7 @@
 				post;
 
 			if( _.isObject(itemProperty) ){
-				post = _.where(posts._posts, itemProperty);
+				post = _.where(posts._posts, itemProperty)[0];
 			}
 
 			return post;
@@ -86,8 +87,12 @@
 		post: function(post_id) {
 			//TODO: Update post lookup to use numeric post_id only.
 			//		Requires hooking into App.BlogPosts data object
-			var postURI = "/static/posts/" + post_id;
+			var postDir = App.config.BLOG_POSTS_DIR,
+				postMetadata = App.BlogPosts.find({"id": post_id}),
+				postFile = postMetadata.file, //TODO: This needs error handling, if undefined accessing .file property throws JS error
+				postURI = postDir + postFile;
 
+			console.log(postMetadata, postMetadata.file, postURI);
 			return $.ajax(postURI).then(function(data){
 				var asMarkdown = marked(data);
 				return asMarkdown;
