@@ -35,6 +35,14 @@ var AppData = (function(){
 		},
 
 		{
+			title: "Bending PHP, Control Flow Flexibility With call_user_func()",
+			date: "2011-08-16",
+			id: "352",
+			uri: "bending-php-control-flow-flexibility-with-call_user_func",
+			file: "352-bending-php-control-flow-flexibility-with-call_user_func.md",
+		},
+
+		{
 			title: "Running Multiple Redis Instances on the Same Server",
 			date: "2011-08-06",
 			id: "342",
