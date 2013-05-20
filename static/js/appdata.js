@@ -35,6 +35,14 @@ var AppData = (function(){
 		},
 
 		{
+			title: "Edit Remote Files in Vim via SCP",
+			date: "2011-11-24",
+			id: "425",
+			uri: "edit-remote-files-in-vim-via-scp",
+			file: "425-edit-remote-files-in-vim-via-scp.md",
+		},
+
+		{
 			title: "From Scheme to Common Lisp, A Syntax Reference",
 			date: "2011-11-17",
 			id: "417",
