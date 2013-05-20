@@ -35,6 +35,14 @@ var AppData = (function(){
 		},
 
 		{
+			title: "College Is More Than Learning A Vocation",
+			date: "2011-11-02",
+			id: "407",
+			uri: "college-is-more-than-learning-a-vocation",
+			file: "407-college-is-more-than-learning-a-vocation.md",
+		},
+
+		{
 			title: "Referencing Last Argument in Bash using Special Parameters",
 			date: "2011-09-03",
 			id: "375",
