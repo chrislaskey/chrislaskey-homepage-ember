@@ -35,6 +35,14 @@ var AppData = (function(){
 		},
 
 		{
+			title: "Learning the Luddite Way",
+			date: "2011-11-12",
+			id: "413",
+			uri: "learning-the-luddite-way",
+			file: "413-learning-the-luddite-way.md",
+		},
+
+		{
 			title: "College Is More Than Learning A Vocation",
 			date: "2011-11-02",
 			id: "407",
