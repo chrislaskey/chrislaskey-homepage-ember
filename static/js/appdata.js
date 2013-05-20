@@ -35,6 +35,14 @@ var AppData = (function(){
 		},
 
 		{
+			title: "Referencing Last Argument in Bash using Special Parameters",
+			date: "2011-09-03",
+			id: "375",
+			uri: "referencing-last-argument-in-bash-using-special-parameters",
+			file: "375-referencing-last-argument-in-bash-using-special-parameters.md",
+		},
+
+		{
 			title: "Bending PHP, Control Flow Flexibility With call_user_func()",
 			date: "2011-08-16",
 			id: "352",
