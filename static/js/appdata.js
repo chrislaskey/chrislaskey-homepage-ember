@@ -35,6 +35,14 @@ var AppData = (function(){
 		},
 
 		{
+			title: "From Scheme to Common Lisp, A Syntax Reference",
+			date: "2011-11-17",
+			id: "417",
+			uri: "from-scheme-to-common-lisp-a-syntax-reference",
+			file: "417-from-scheme-to-common-lisp-a-syntax-reference.md",
+		},
+
+		{
 			title: "Learning the Luddite Way",
 			date: "2011-11-12",
 			id: "413",
