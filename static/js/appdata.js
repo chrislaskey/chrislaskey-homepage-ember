@@ -35,6 +35,14 @@ var AppData = (function(){
 		},
 
 		{
+			title: "Chaining Exec Blocks in Puppet",
+			date: "2012-08-07",
+			id: "531",
+			uri: "chaining-exec-blocks-in-puppet",
+			file: "531-chaining-exec-blocks-in-puppet.md",
+		},
+
+		{
 			title: "Monitoring Long Running IO Commands with pv",
 			date: "2012-06-18",
 			id: "568",
