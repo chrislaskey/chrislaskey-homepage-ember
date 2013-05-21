@@ -35,6 +35,14 @@ var AppData = (function(){
 		},
 
 		{
+			title: "JavaScript First-class Functions and Prototypal Inheritence",
+			date: "2012-09-08",
+			id: "509",
+			uri: "javascript-first-class-functions-and-prototypal-inheritence",
+			file: "509-javascript-first-class-functions-and-prototypal-inheritence.md",
+		},
+
+		{
 			title: "Chaining Exec Blocks in Puppet",
 			date: "2012-08-07",
 			id: "531",
