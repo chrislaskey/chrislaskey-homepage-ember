@@ -35,6 +35,14 @@ var AppData = (function(){
 		},
 
 		{
+			title: "Customer Service is About Relationships",
+			date: "2011-12-26",
+			id: "451",
+			uri: "customer-service-is-about-relationships",
+			file: "451-customer-service-is-about-relationships.md",
+		},
+
+		{
 			title: "Edit Remote Files in Vim via SCP",
 			date: "2011-11-24",
 			id: "425",
