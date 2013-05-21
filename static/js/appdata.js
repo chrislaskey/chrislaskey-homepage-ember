@@ -35,6 +35,14 @@ var AppData = (function(){
 		},
 
 		{
+			title: "Keep Puppet Modules Flat and Focused",
+			date: "2012-12-05",
+			id: "481",
+			uri: "keep-puppet-modules-flat-and-focused",
+			file: "481-keep-puppet-modules-flat-and-focused.md",
+		},
+
+		{
 			title: "JavaScript First-class Functions and Prototypal Inheritence",
 			date: "2012-09-08",
 			id: "509",
