@@ -35,6 +35,14 @@ var AppData = (function(){
 		},
 
 		{
+			title: "Monitoring Long Running IO Commands with pv",
+			date: "2012-06-18",
+			id: "568",
+			uri: "monitoring-long-running-io-commands-with-pv",
+			file: "568-monitoring-long-running-io-commands-with-pv.md",
+		},
+
+		{
 			title: "Source Variables in Bash Scripts",
 			date: "2012-05-23",
 			id: "573",
