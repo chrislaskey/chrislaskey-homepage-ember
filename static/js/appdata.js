@@ -35,6 +35,14 @@ var AppData = (function(){
 		},
 
 		{
+			title: "Command Lines and Aesthetics",
+			date: "2012-04-28",
+			id: "474",
+			uri: "command-lines-and-aesthetics",
+			file: "474-command-lines-and-aesthetics.md",
+		},
+
+		{
 			title: "Simplicity in Electrical Engineering",
 			date: "2012-01-27",
 			id: "466",
