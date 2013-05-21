@@ -63,10 +63,14 @@
 
 		find: function(itemProperty){
 			var posts = App.BlogPosts.create(),
-				post;
+				post = {},
+				lookupResult;
 
 			if( _.isObject(itemProperty) ){
-				post = _.where(posts._posts, itemProperty)[0];
+				lookupResult = _.where(posts._posts, itemProperty);
+				if( lookupResult[0] ){
+					post = lookupResult[0];
+				}
 			}
 
 			return post;
