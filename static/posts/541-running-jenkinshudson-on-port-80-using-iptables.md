@@ -1,4 +1,4 @@
-Running Jenkins/Hudson on Port 80 Using Iptables
+Running Jenkins/Hudson on Port 80 Using iptables
 ================================================
 
 January 15, 2013

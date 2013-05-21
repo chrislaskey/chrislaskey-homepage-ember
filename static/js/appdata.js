@@ -27,11 +27,19 @@ var AppData = (function(){
 		},
 
 		{
-			title: "Running Jenkins/Hudson on Port 80 Using Iptables",
+			title: "Running Jenkins/Hudson on Port 80 Using iptables",
 			date: "2013-01-15",
 			id: "541",
 			uri: "running-jenkinshudson-on-port-80-using-iptables",
 			file: "541-running-jenkinshudson-on-port-80-using-iptables.md",
+		},
+
+		{
+			title: "Simplicity in Electrical Engineering",
+			date: "2012-01-27",
+			id: "466",
+			uri: "simplicity-in-electrical-engineering",
+			file: "466-simplicity-in-electrical-engineering.md",
 		},
 
 		{
