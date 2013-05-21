@@ -24,7 +24,7 @@
 
 	App.IndexRoute = Ember.Route.extend({
 		model: function() {
-			return;
+			return; 
 		}
 	});
 
@@ -78,31 +78,83 @@
 			var perPage = App.config.BLOG_POSTS_PER_PAGE,
 				posts = App.BlogPosts.findAll(0, perPage);
 			return posts;
+		},
+		renderTemplate: function() {
+
+			// Ember throws warning whenever parent template bubbling is used,
+			// unless explicitly acknowledged with the code below.
+			this.render({ into: 'application' });
 		}
 	});
 
 	App.Post = Ember.Object.extend({});
 
 	App.Post.reopenClass({
-		post: function(post_id) {
-			//TODO: Update post lookup to use numeric post_id only.
-			//		Requires hooking into App.BlogPosts data object
+		find: function(post_id) {
 			var postDir = App.config.BLOG_POSTS_DIR,
-				postMetadata = App.BlogPosts.find({"id": post_id}),
+				postMetadata = App.BlogPosts.find({"post_id": post_id}),
 				postFile = postMetadata.file, //TODO: This needs error handling, if undefined accessing .file property throws JS error
-				postURI = postDir + postFile;
+				postURI = postDir + postFile,
+				asMarkdown;
 
-			console.log(postMetadata, postMetadata.file, postURI);
-			return $.ajax(postURI).then(function(data){
-				var asMarkdown = marked(data);
-				return asMarkdown;
+			// TODO: Deprecated.
+			// Async version using promises causes too many problems within Ember.js.
+			// Some of ember code handles them, so doesn't.
+
+			// return $.ajax(postURI).then(function(data){
+			// 	var asMarkdown = marked(data);
+			// 	return asMarkdown;
+			// });
+
+			$.ajax({
+				url: postURI,
+				async: false,
+				success: function(data){
+					asMarkdown = marked(data);
+				}
 			});
+
+			return asMarkdown;
 		}
 	});
 
+	// App.PostObjectController = Ember
+
 	App.PostRoute = Ember.Route.extend({
+
+		/* 
+		 * The `model` hook is only executed when entered via the URL. It is
+		 * not executed at all when loaded via linkTo.
+		 * See: http://emberjs.com/guides/routing/specifying-a-routes-model/
+		 */
 		model: function(params) {
-			return App.Post.post(params.post_id);
+			return App.Post.find(params.post_id);
+		},
+
+		/* 
+		 * Use the setupController hook to force the model hook to execute,
+		 * regardless of whether routed via an internal link (linkTo) or
+		 * external link (reload).
+		 */
+		setupController: function(controller, model){
+
+			/*
+			 * If routed via an external link, the model hook already executed
+			 * and the value of the model variable is correct. If routed via an
+			 * internal link (linkTo), the model hook has not been executed and
+			 * the value of the model variable is the passed linkTo object.
+			 */
+			if( _.isObject(model) ){
+				// TODO: Switch this to a model hook call.
+				var post = App.Post.find(model.id);
+				controller.set('model', post);
+			}
+		},
+		renderTemplate: function() {
+
+			// Ember throws warning whenever parent template bubbling is used,
+			// unless explicitly acknowledged with the code below.
+			this.render({ into: 'application' });
 		}
 	});
 

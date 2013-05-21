@@ -173,12 +173,12 @@
 
 		<p class="intro">Over the years I've written on a variety of technical topics. Past content will added in time</p>
 		<ul class="blog-posts">
-		{{#each post in model}}
+		{{#each blogpost in model}}
     		<li>
-    			<a href="/blog/{{unbound post.id}}/{{unbound post.uri}}">
-    				<span class="title">{{post.title}}</span>
-    				<span class="date">{{post.date}}</span>
-    			</a>
+    			{{#linkTo post.index blogpost}}
+    				<span class="title">{{blogpost.title}}</span>
+    				<span class="date">{{blogpost.date}}</span>
+    			{{/linkTo}}
     		</li>
 		{{/each}}
 		</ul>
