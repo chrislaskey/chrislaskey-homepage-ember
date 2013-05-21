@@ -81,8 +81,10 @@
 		},
 		renderTemplate: function() {
 
-			// Ember throws warning whenever parent template bubbling is used,
-			// unless explicitly acknowledged with the code below.
+			/*
+			 * Ember throws warning whenever parent template bubbling is used,
+			 * unless explicitly acknowledged with the code below.
+			 */
 			this.render({ into: 'application' });
 		}
 	});
@@ -92,33 +94,22 @@
 	App.Post.reopenClass({
 		find: function(post_id) {
 			var postDir = App.config.BLOG_POSTS_DIR,
-				postMetadata = App.BlogPosts.find({"post_id": post_id}),
+				postMetadata = App.BlogPosts.find({"id": post_id}),
 				postFile = postMetadata.file, //TODO: This needs error handling, if undefined accessing .file property throws JS error
 				postURI = postDir + postFile,
-				asMarkdown;
-
-			// TODO: Deprecated.
-			// Async version using promises causes too many problems within Ember.js.
-			// Some of ember code handles them, so doesn't.
-
-			// return $.ajax(postURI).then(function(data){
-			// 	var asMarkdown = marked(data);
-			// 	return asMarkdown;
-			// });
+				postAsMarkdown;
 
 			$.ajax({
 				url: postURI,
 				async: false,
 				success: function(data){
-					asMarkdown = marked(data);
+					postAsMarkdown = marked(data);
 				}
 			});
 
-			return asMarkdown;
+			return postAsMarkdown;
 		}
 	});
-
-	// App.PostObjectController = Ember
 
 	App.PostRoute = Ember.Route.extend({
 
@@ -145,15 +136,19 @@
 			 * the value of the model variable is the passed linkTo object.
 			 */
 			if( _.isObject(model) ){
-				// TODO: Switch this to a model hook call.
-				var post = App.Post.find(model.id);
+				var post;
+				model.post_id = model.id;
+				post = this.model(model);
 				controller.set('model', post);
 			}
 		},
+
 		renderTemplate: function() {
 
-			// Ember throws warning whenever parent template bubbling is used,
-			// unless explicitly acknowledged with the code below.
+			/*
+			 * Ember throws warning whenever parent template bubbling is used,
+			 * unless explicitly acknowledged with the code below.
+			 */
 			this.render({ into: 'application' });
 		}
 	});
