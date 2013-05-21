@@ -35,6 +35,14 @@ var AppData = (function(){
 		},
 
 		{
+			title: "Source Variables in Bash Scripts",
+			date: "2012-05-23",
+			id: "573",
+			uri: "source-variables-in-bash-scripts",
+			file: "573-source-variables-in-bash-scripts.md",
+		},
+
+		{
 			title: "Command Lines and Aesthetics",
 			date: "2012-04-28",
 			id: "474",
