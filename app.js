@@ -145,9 +145,22 @@
 				post = this.model(model);
 				controller.set('model', post);
 			}
+
+			/*
+			 * The preferred method to redirect is this.transitionTo('route').
+			 * This will not do a clean redirect unless called from the
+			 * route's redirect property, which executes before the 
+			 * controller. Not in time to evaluate if the blog post does not
+			 * exist. So for now, a brute window.location redirect.
+			 */
+			model = controller.get('model');
+			if( !model ){
+				window.location = '/blog';
+				return;
+			}
 		},
 
-		renderTemplate: function() {
+		renderTemplate: function(controller, model) {
 
 			/*
 			 * Ember throws warning whenever parent template bubbling is used,
