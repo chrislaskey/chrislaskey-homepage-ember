@@ -171,8 +171,10 @@
 	});
 
 	App.Error404Route = Ember.Route.extend({
-		model: function(){
-			return;
+		model: function(params){
+			return {
+				url: params[':']
+			};
 		}
 	});
 
