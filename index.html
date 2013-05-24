@@ -25,7 +25,7 @@
 			<div class="container" id="banner">
 				<div class="sixteen columns alpha omega">
 					<h2>A Full-Stack<br/>Software Engineer</h2>
-					<h3>combining <span class="highlight">craftsmanship</span> with <span class="alt-highlight">pragmatism</span></h3>
+					<h3>{{#linkTo technicalskills }}combining <span class="highlight">craftsmanship</span> with <span class="alt-highlight">pragmatism</span>{{/linkTo}}</h3>
 				</div>
 			</div>
 		</div>
@@ -243,6 +243,7 @@
 				};
 
 			$(document).on('click', '.navigation a', scrollToMain);
+			$(document).on('click', '#banner h3 a', scrollToMain);
 			$(document).on('click', '.blog-posts a', scrollToMain);
 			$(document).on('click', '.blog-link a', scrollToMain);
 		});
