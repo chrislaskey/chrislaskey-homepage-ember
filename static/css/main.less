@@ -83,10 +83,6 @@ a{
 	background:#1b659f;
 }
 
-	.wrapper-header-image{
-		background:#1b659f url('/static/images/banner_waves.jpg') 50% 55% no-repeat;
-	}
-
 	#header{
 		height:78px;
 		z-index:100;
@@ -209,7 +205,7 @@ a{
 
 // Video header content
 
-#video_background {
+#video-ocean-background{
 	bottom: 0px;
 	height: auto;
 	left: 0px;
@@ -223,7 +219,7 @@ a{
 	z-index: 1;
 }
 
-#video_pattern {
+#video-ocean-overlay{
 	background-image: url(/static/images/bg_noise.png);
 	height: 100%;
 	left: 0px;
@@ -232,6 +228,10 @@ a{
 	top: 0px;
 	width: 100%;
 	z-index: 10;
+}
+
+#wrapper-header.video-ocean-fallback{
+	background:#1b659f url('/static/images/banner_waves.jpg') 50% 55% no-repeat;
 }
 
 // Header content
@@ -442,7 +442,7 @@ a{
 
 @media only screen and (min-width: 1600px) {
 
-	#wrapper-header{
+	#wrapper-header.video-ocean-fallback{
 		background:#1b659f url('/static/images/banner_waves.jpg') fixed bottom bottom no-repeat;
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
@@ -450,7 +450,7 @@ a{
 		background-size: cover;
 	}
 
-	#video_background {
+	#video-ocean-background {
 		bottom: -40%;
 	}
 

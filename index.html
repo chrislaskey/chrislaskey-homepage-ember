@@ -13,14 +13,6 @@
 
 		<div class="wrapper" id="wrapper-header">
 
-			<video id="video_background" preload="auto" autoplay="true" loop="loop" muted volume="0">
-				<source src="/static/video/ocean-waves.webm" type="video/webm"/>
-				<source src="/static/video/ocean-waves.ogv" type="video/ogg"/>
-				<source src="/static/video/ocean-waves.mp4" type="video/mp4"/>
-			</video>
-
-			<div id="video_pattern"></div>
-
 			<div class="container" id="header">
 				<div class="sixteen columns alpha omega">
 					<a class="alpha six columns" href="/" id="logo">Chris Laskey</a>
@@ -134,7 +126,7 @@
 		<h2>In General</h2>
 
 		<p>No matter the domain, I take pride in the work I do and strive to ship smart solutions, be it through design clarity, algorithmic effienciency, clean code, or stack simplicity.<p>
-		
+
 		<p>Put simply, I love tackling a new problem with a command line, tmux, git, and vim. I may not succeed on the first try, but with a little hard work, a sense of humor and a light-hearted spirit, I'll get there.</p>
 	</script>
 
@@ -235,12 +227,46 @@
 		$(function(){
 
 			var scrollToMain = function(){
-				$(document).scrollTo( $('#main'), 300 );
-			}
+					$(document).scrollTo( $('#main'), 300, {offset: getOffset()});
+				},
+
+				getOffset = function(){
+					var offset = 0,
+						mobileNav = $('#wrapper-mobile-navigation'),
+						mobileIsVisible = mobileNav.is(':visible');
+
+					if( mobileIsVisible ){
+						offset = offset - mobileNav.height();
+					}
+
+					return offset;
+				};
 
 			$(document).on('click', '.navigation a', scrollToMain);
 			$(document).on('click', '.blog-posts a', scrollToMain);
 			$(document).on('click', '.blog-link a', scrollToMain);
+		});
+
+		$(function(){
+
+			var windowWidth = $(window).width(),
+				windowVideoMinimumSize = 960,
+				videoTarget = $('#wrapper-header'),
+				videoFallbackClass = 'video-ocean-fallback',
+				videoOverlay = '<div id="video-ocean-overlay"></div>';
+				video =	['<video id="video-ocean-background" preload="auto" autoplay="true" loop="loop" muted volume="0">',
+						'<source src="/static/video/ocean-waves.webm" type="video/webm"/>',
+						'<source src="/static/video/ocean-waves.ogv" type="video/ogg"/>',
+						'<source src="/static/video/ocean-waves.mp4" type="video/mp4"/>',
+						'<div id="video_fallback"></div>',
+						'</video>'].join('\n');
+
+			if( windowWidth >= windowVideoMinimumSize ){
+				videoTarget.prepend(videoOverlay);
+				videoTarget.prepend(video);
+			}else{
+				videoTarget.addClass(videoFallbackClass);
+			}
 		});
 
 	</script>
