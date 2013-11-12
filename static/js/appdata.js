@@ -3,6 +3,14 @@ var AppData = (function(){
 	var _posts = [
 
 		{
+			title: "Improve Vagrant Provisioning with a Dedicated Puppetmaster",
+			date: "2013-08-17",
+			id: "592",
+			uri: "improve-vagrant-provisioning-with-a-dedicated-puppetmaster",
+			file: "592-improve-vagrant-provisioning-with-a-dedicated-puppetmaster.md",
+		},
+
+		{
 			title: "Monitoring File System Updates by VIM in Python",
 			date: "2013-05-13",
 			id: "590",
