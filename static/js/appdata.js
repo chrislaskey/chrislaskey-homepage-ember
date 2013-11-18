@@ -3,8 +3,16 @@ var AppData = (function(){
 	var _posts = [
 
 		{
+			title: "Using Vagrant Boxes as a Virtual Machine Cache",
+			date: "2013-11-17",
+			id: "597",
+			uri: "using-vagrant-boxes-as-a-virtual-machine-cache.md",
+			file: "597-using-vagrant-boxes-as-a-virtual-machine-cache.md",
+		},
+
+		{
 			title: "Improve Vagrant Provisioning with a Dedicated Puppetmaster",
-			date: "2013-08-17",
+			date: "2013-08-12",
 			id: "592",
 			uri: "improve-vagrant-provisioning-with-a-dedicated-puppetmaster",
 			file: "592-improve-vagrant-provisioning-with-a-dedicated-puppetmaster.md",
