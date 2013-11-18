@@ -1,6 +1,8 @@
 Using Vagrant Boxes as a Virtual Machine Cache
 ==============================================
 
+November 17, 2013
+
 Vagrant makes it easy to create custom Vagrant boxes from existing virtual
 machines. As someone who uses Vagrant frequently, it's great to be able to
 create snapshots of partially-configured, fully-configured, or in-development

@@ -1,7 +1,7 @@
 Improve Vagrant Provisioning with a Dedicated Puppetmaster
 ==========================================================
 
-August 18, 2013
+August 12, 2013
 
 [Vagrant](http://vagrantup.com) supports a variety of provisioning options like Puppet, Chef and shell scripts. Provisioning with Puppet is as simple as adding a block to the Vagrantfile: 
 
