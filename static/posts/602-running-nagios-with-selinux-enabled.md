@@ -58,6 +58,6 @@ Nagios checks done by the Nagios server will be covered by the above module. How
 
 When using a configuration management tool like Ansible, deploy the `.te` configuration file and compile it on each server. Though the `.pp` file may be portable, it is not recommended. To check if a module has already been loaded, use `semodule -l | grep ^RuleName`.
 
-### Conclusion
+## Conclusion
 
 Turning SELinux off doesn't have to be the only answer. Whether it's for Nagios or another popular program, tools like audit2allow make it easy to create custom SELinux modules.
