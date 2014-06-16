@@ -1,6 +1,13 @@
 var AppData = (function(){
 
 	var _posts = [
+		{
+			title: "Running Nagios with SELinux Enabled",
+			date: "2014-06-15",
+			id: "602",
+			uri: "running-nagios-with-selinux-enabled.md",
+			file: "602-running-nagios-with-selinux-enabled.md",
+		},
 
 		{
 			title: "Using Vagrant Boxes as a Virtual Machine Cache",
